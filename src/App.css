@@ -11,4 +11,17 @@
 
 .Flats-container {
   width: 60%;
+  overflow: scroll;
+}
+
+.card {
+  height: 230px;
+  border: 2px solid #000;
+  display: flex;
+}
+
+.card img {
+  max-width:100%;
+  max-height:100%;
+  cursor: pointer;
 }

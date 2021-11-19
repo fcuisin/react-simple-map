@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
+import Flat from './Flat';
 
 class FlatsList extends Component {
 
   render() {
     return(
 
-      <p>List of flats here</p>
+      <div>
+        {this.props.flats.map(flat => <Flat name={flat.name} url={flat.imageUrl} price={flat.price} key={flat.id}/>)}
+      </div>
 
     )
   }
