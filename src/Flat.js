@@ -7,8 +7,8 @@ function Flat({name, price, url}) {
         <img src={url} alt={name}/>
       </div>
       <div className="card-description">
-        <p>{name}</p>
-        <p>{price}</p>
+        <p className="card-title">{name}</p>
+        <p className="card-price">{price}€</p>
       </div>
     </div>
   )

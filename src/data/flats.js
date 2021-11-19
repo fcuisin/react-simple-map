@@ -1,7 +1,7 @@
 const flats = [
   {
     id: 1,
-    name: "Charm at the Steps of the Sacre Coeur/Montmartre",
+    name: "Charm in the Sacre Coeur/Montmartre",
     imageUrl: "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat1.jpg",
     price: 164,
     priceCurrency: "EUR",

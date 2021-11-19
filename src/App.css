@@ -1,27 +1,55 @@
 .App {
   display: flex;
   height: 100vh;
+  background: rgba(0,0,0,0.9);
 }
 
 .Map-container {
   width: 40%;
-  background-color: red;
   overflow-x: hidden;
 }
 
 .Flats-container {
   width: 60%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
   overflow: scroll;
+  padding: 10px;
 }
 
 .card {
-  height: 230px;
-  border: 2px solid #000;
-  display: flex;
+  position: relative;
+  height: auto;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.9);
 }
 
-.card img {
+.card-img img {
   max-width:100%;
   max-height:100%;
   cursor: pointer;
+  background-size: cover !important;
+  opacity: 0.6;
+}
+
+.card-description .card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  text-transform: uppercase;
+}
+
+.card-description .card-price {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.card-title {
+  padding: 5px;
+  backdrop-filter: blur(5px);
+  font-size: 18px;
+  font-weight: 700;
 }

@@ -10,9 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="Flats-container">
         <FlatsList flats={flats}/>
-      </div>
       <div className="Map-container">
         <Map/>
       </div>

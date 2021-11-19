@@ -6,7 +6,7 @@ class FlatsList extends Component {
   render() {
     return(
 
-      <div>
+      <div className="Flats-container">
         {this.props.flats.map(flat => <Flat name={flat.name} url={flat.imageUrl} price={flat.price} key={flat.id}/>)}
       </div>
 
