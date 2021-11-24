@@ -22,6 +22,10 @@ const Map = (props) => {
     })
   });
 
+  useEffect(() => {
+    map.current.setCenter([props.selectedFlat.lng,props.selectedFlat.lat]);
+  })
+
   return (
     <div ref={mapContainer} className="map"></div>
   );
