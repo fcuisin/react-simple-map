@@ -1,9 +1,11 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import mapboxgl from 'mapbox-gl';
 
 mapboxgl.accessToken = "pk.eyJ1IjoiZmN1aXNpbiIsImEiOiJjazJnZ3R0YjQwaTBwM21xZzNtMjlybXpvIn0.ver5lOt8ggHRJZ5-KFmW4g";
 
 const Map = (props) => {
+
+  const [currentMarker, setCurrentMarker] = useState(null)
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -23,8 +25,15 @@ const Map = (props) => {
   });
 
   useEffect(() => {
+    if (currentMarker != null) {
+      currentMarker.remove();
+    }
     map.current.setCenter([props.selectedFlat.lng,props.selectedFlat.lat]);
-  })
+    const marker = new mapboxgl.Marker({color:'red'}).setLngLat([props.selectedFlat.lng,props.selectedFlat.lat]);
+    map.current.on(marker.addTo(map.current));
+    setCurrentMarker(marker);
+    console.log(currentMarker)
+  },[props.selectedFlat.id])
 
   return (
     <div ref={mapContainer} className="map"></div>
